@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 30px;
+  text-align: center;
+}
+.container {
+  width: 90vw;
+  margin: 0 auto;
+  text-overflow: hidden;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.search-form {
+  width: 50%;
+  margin: 0 auto;
+}
+.search-form input {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  margin-bottom: 20px;
+}
+button {
+  display: block;
+  padding: 10px 30px;
+  margin: 10px auto;
+  background: turquoise;
+  color: white;
+  border: 2px solid turquoise;
+}
+
+.pokemon-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-info {
+  width: 40%;
+  margin: 0 auto;
+  height: 100%;
+}
+.btn-next,
+.btn-pre {
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  height: 150px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.pokemon-attribute {
+  margin-top: 5px;
+  padding: 5px;
+}
+.attribute {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.attribute-data {
+  font-size: 1.2rem;
+}
+
+.pokemon-image {
+  width: 30%;
+  margin: 0 auto;
+  margin-left: auto;
+}
+.pokemon-image img {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+.link-btn {
+  color: #333333;
+  text-decoration: none;
+  background-color: #dddddd;
+  border: 1px solid #cccccc;
+
+  width: 100%;
+  height: 100%;
+  display: block!;
+  text-align: center;
+  line-height: 150px;
+  border: 2px solid #3e3e3e;
+  border-radius: 5px;
+}
+p {
+  margin-right: 20px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 850px) {
+  .search-form {
+    width: 100%;
+  }
+
+  .pokemon-container {
+    flex-direction: column;
+  }
+  .pokemon-info {
+    width: 100%;
+  }
+
+  .pokemon-image {
+    width: 100%;
+  }
+  .btn-next,
+  .btn-pre {
+    width: 60%;
+    height: 50px;
+    margin: 20px;
+  }
+  .link-btn {
+    line-height: 50px;
+  }
+
+  .attribute {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  .attribute-data {
+    font-size: 0.8rem;
+  }
+}

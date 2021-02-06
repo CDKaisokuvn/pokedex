@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>POKEDEX</h1>
+      <div class="search-form">
+        <form method="get" action="/">
+          <input name="q" type="search" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="pokemon-container">
+        <div class="btn-pre">
+          <a
+            href="http://localhost:5000/pokemon/<%= data.number -1 %>"
+            class="link-btn"
+            ><i class="fas fa-backward"></i
+          ></a>
+        </div>
+
+        <div class="pokemon-info">
+          <div class="pokemon-attribute">
+            <span class="attribute">Number: </span>
+            <span class="attribute-data"> <%= data.number %> </span>
+          </div>
+
+          <div class="pokemon-attribute">
+            <span class="attribute">Types: </span>
+            <span class="attribute-data"> <%= data.types.join(", ") %></span>
+
+            <div class="pokemon-attribute">
+              <span class="attribute">Species: </span>
+              <span class="attribute-data"> <%= data.species %></span>
+            </div>
+
+            <div class="pokemon-attribute">
+              <span class="attribute">Legendary: </span>
+              <span class="attribute-data">
+                <%= data.legendary ? "True" : "False" %></span
+              >
+            </div>
+            <div class="pokemon-attribute">
+              <span class="attribute">Abilities: </span>
+              <span class="attribute-data"
+                ><%= data.abilities.normal.join(", ") + ", " +
+                data.abilities.hidden.join(", ") %></span
+              >
+            </div>
+            <div class="pokemon-attribute">
+              <div class="flex">
+                <p>
+                  <span class="attribute">Gender: </span>
+                  <span class="attribute-data">
+                    <%= data.gender.length > 1? data.gender.join(" / ") : "None"
+                    %></span
+                  >
+                </p>
+                <p>
+                  <span class="attribute">Gen: </span>
+                  <span class="attribute-data"> <%= data.gen %></span>
+                </p>
+              </div>
+            </div>
+            <div class="pokemon-attribute">
+              <span class="attribute">EggGroups: </span>
+              <span class="attribute-data">
+                <%= data.eggGroups.join(", ") %>
+              </span>
+            </div>
+
+            <div class="pokemon-attribute">
+              <div class="flex">
+                <p>
+                  <span class="attribute">Weight: </span>
+                  <span class="attribute-data"> <%= data.weight %></span>
+                </p>
+                <p>
+                  <span class="attribute">Height: </span>
+                  <span class="attribute-data"> <%= data.height %></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="pokemon-attribute">
+              <span class="attribute">Description: </span>
+              <span class="attribute-data"> <%= data.description %></span>
+            </div>
+            <div class="pokemon-attribute">
+              <span class="attribute">Sprite: </span>
+              <span class="attribute-data">
+                <a href="<%= data.sprite %>"> <%= data.sprite %></a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="pokemon-image">
+          <img src="<%= data.sprite %>" alt="<%= data.name %>" />
+        </div>
+
+        <div class="btn-next">
+          <a
+            href="http://localhost:5000/pokemon/<%= +data.number + 1 %>"
+            class="link-btn"
+            ><i class="fas fa-forward"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
